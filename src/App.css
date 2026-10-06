@@ -1,0 +1,339 @@
+/* Main Page Container */
+.page-wrapper {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1.5rem;
+}
+
+.app-container {
+  width: 100%;
+  max-width: 480px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+/* Header Styling */
+.app-header {
+  text-align: center;
+}
+
+.app-title {
+  font-family: var(--font-heading);
+  font-size: 2.25rem;
+  font-weight: 700;
+  letter-spacing: -0.025em;
+  background: linear-gradient(135deg, #ffffff 0%, #cbd5e1 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 0.35rem;
+}
+
+.app-subtitle {
+  font-size: 0.95rem;
+  color: var(--text-secondary);
+  font-weight: 400;
+}
+
+/* Central Counter Card */
+.counter-card {
+  width: 100%;
+  background: var(--card-bg);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid var(--card-border);
+  border-radius: 24px;
+  padding: 2.25rem 2rem;
+  box-shadow: var(--card-shadow);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  transition: transform var(--transition-normal);
+}
+
+.card-heading {
+  font-family: var(--font-heading);
+  font-size: 1.15rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--text-muted);
+  margin-bottom: 1.25rem;
+}
+
+/* Counter Value Display */
+.count-display-wrapper {
+  margin: 0.5rem 0 1.25rem 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100px;
+}
+
+.count-value {
+  font-family: var(--font-heading);
+  font-size: 5rem; /* 80px */
+  font-weight: 700;
+  line-height: 1;
+  color: var(--text-primary);
+  text-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  display: inline-block;
+  animation: popIn 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+@keyframes popIn {
+  0% {
+    transform: scale(0.85);
+    opacity: 0.7;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+/* Conditional Message Box */
+.conditional-message-box {
+  width: 100%;
+  margin-bottom: 1.75rem;
+  min-height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.status-msg {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  border-radius: 9999px;
+  font-size: 0.875rem;
+  font-weight: 500;
+  transition: all var(--transition-fast);
+}
+
+.status-msg.min-limit-msg {
+  background: var(--color-warning-bg);
+  border: 1px solid var(--color-warning-border);
+  color: var(--color-warning-text);
+}
+
+.status-msg.active-msg {
+  background: var(--color-active-bg);
+  border: 1px solid var(--color-active-border);
+  color: var(--color-active-text);
+}
+
+.msg-icon {
+  font-size: 0.95rem;
+}
+
+/* Button Group Layout */
+.button-group {
+  display: flex;
+  gap: 0.75rem;
+  width: 100%;
+  justify-content: center;
+  margin-bottom: 1.75rem;
+}
+
+/* Base Button Styles */
+.btn {
+  flex: 1;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.35rem;
+  padding: 0.75rem 1.1rem;
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  font-weight: 600;
+  border: none;
+  border-radius: 14px;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  outline: none;
+  user-select: none;
+}
+
+.btn-symbol {
+  font-size: 1.1rem;
+  font-weight: 700;
+  line-height: 1;
+}
+
+/* Button Variants */
+/* Decrement Button */
+.btn-decrement {
+  background: var(--color-decrement);
+  color: #ffffff;
+  box-shadow: 0 4px 14px var(--color-decrement-glow);
+}
+
+.btn-decrement:hover:not(:disabled) {
+  background: var(--color-decrement-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px var(--color-decrement-glow);
+}
+
+.btn-decrement:active:not(:disabled) {
+  transform: translateY(0);
+}
+
+.btn-decrement:disabled {
+  background: #334155;
+  color: #64748b;
+  box-shadow: none;
+  cursor: not-allowed;
+  opacity: 0.6;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+/* Reset Button */
+.btn-reset {
+  background: rgba(99, 102, 241, 0.15);
+  color: #a5b4fc;
+  border: 1px solid rgba(99, 102, 241, 0.4);
+}
+
+.btn-reset:hover {
+  background: var(--color-reset);
+  color: #ffffff;
+  border-color: var(--color-reset);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px var(--color-reset-glow);
+}
+
+.btn-reset:active {
+  transform: translateY(0);
+}
+
+/* Increment Button */
+.btn-increment {
+  background: var(--color-increment);
+  color: #ffffff;
+  box-shadow: 0 4px 14px var(--color-increment-glow);
+}
+
+.btn-increment:hover {
+  background: var(--color-increment-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px var(--color-increment-glow);
+}
+
+.btn-increment:active {
+  transform: translateY(0);
+}
+
+/* Footer & Additional Status */
+.counter-footer {
+  width: 100%;
+  padding-top: 1.25rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+  font-size: 0.875rem;
+}
+
+.status-row, .status-indicator {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.status-label, .indicator-label {
+  color: var(--text-secondary);
+}
+
+.status-value {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  color: var(--text-primary);
+  font-size: 1rem;
+}
+
+/* Badge Indicator */
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.25rem 0.65rem;
+  border-radius: 9999px;
+  font-size: 0.775rem;
+  font-weight: 600;
+}
+
+.badge-inactive {
+  background: rgba(245, 158, 11, 0.15);
+  color: #fbbf24;
+}
+
+.badge-active {
+  background: rgba(16, 185, 129, 0.15);
+  color: #34d399;
+}
+
+.badge-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.badge-inactive .badge-dot {
+  background-color: #fbbf24;
+}
+
+.badge-active .badge-dot {
+  background-color: #34d399;
+  box-shadow: 0 0 8px #34d399;
+  animation: pulse 1.8s infinite;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(0.95);
+    opacity: 0.8;
+  }
+  50% {
+    transform: scale(1.25);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(0.95);
+    opacity: 0.8;
+  }
+}
+
+/* Responsive Media Queries */
+@media (max-width: 480px) {
+  .counter-card {
+    padding: 1.75rem 1.25rem;
+    border-radius: 20px;
+  }
+
+  .app-title {
+    font-size: 1.85rem;
+  }
+
+  .count-value {
+    font-size: 4.25rem;
+  }
+
+  .button-group {
+    flex-direction: column;
+    gap: 0.65rem;
+  }
+
+  .btn {
+    width: 100%;
+    padding: 0.85rem 1rem;
+  }
+}

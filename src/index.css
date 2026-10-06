@@ -1,0 +1,61 @@
+/* Core Design System & CSS Reset */
+:root {
+  /* Color Palette - Vibrant & Modern Slate/Indigo Theme */
+  --bg-gradient: linear-gradient(135deg, #0f172a 0%, #1e1b4b 50%, #0f172a 100%);
+  --card-bg: rgba(30, 41, 59, 0.75);
+  --card-border: rgba(255, 255, 255, 0.1);
+  --card-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.5), 0 0 30px rgba(99, 102, 241, 0.15);
+  
+  --text-primary: #f8fafc;
+  --text-secondary: #94a3b8;
+  --text-muted: #64748b;
+  
+  /* Primary Actions */
+  --color-increment: #10b981; /* Emerald green */
+  --color-increment-hover: #059669;
+  --color-increment-glow: rgba(16, 185, 129, 0.3);
+  
+  --color-decrement: #ef4444; /* Coral Red */
+  --color-decrement-hover: #dc2626;
+  --color-decrement-glow: rgba(239, 68, 68, 0.3);
+  
+  --color-reset: #6366f1; /* Indigo */
+  --color-reset-hover: #4f46e5;
+  --color-reset-glow: rgba(99, 102, 241, 0.3);
+
+  --color-warning-bg: rgba(245, 158, 11, 0.12);
+  --color-warning-border: rgba(245, 158, 11, 0.3);
+  --color-warning-text: #fbbf24;
+
+  --color-active-bg: rgba(16, 185, 129, 0.12);
+  --color-active-border: rgba(16, 185, 129, 0.3);
+  --color-active-text: #34d399;
+
+  /* Typography */
+  --font-heading: 'Outfit', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-body: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  
+  /* Transitions */
+  --transition-fast: 0.15s ease;
+  --transition-normal: 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font-body);
+  background: var(--bg-gradient);
+  color: var(--text-primary);
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
